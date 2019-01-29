@@ -13,9 +13,9 @@ public abstract class MixinUnicodeTextureGlyph implements IVariableAdvanceGlyph 
     private boolean shouldRemoveAdvance = false;
 
     @Shadow
-    public abstract int getWidth();
+    public int width;
 
-    @Inject(method="Lnet/minecraft/client/font/UnicodeTextureFont$UnicodeTextureGlyph;getAdvance()F", at=@At("HEAD"), cancellable = true)
+    @Inject(method="getAdvance()F", at=@At("HEAD"), cancellable = true, remap = false)
     public void getAdvance(CallbackInfoReturnable<Float> ci) {
         if(shouldRemoveAdvance) {
             ci.setReturnValue(0.0f);
@@ -23,7 +23,7 @@ public abstract class MixinUnicodeTextureGlyph implements IVariableAdvanceGlyph 
     }
 
     public float getRealAdvance() {
-        return (float)(getWidth() / 2 + 1);
+        return (float)(width / 2 + 1);
     }
 
     @Override
