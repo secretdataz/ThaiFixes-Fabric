@@ -8,7 +8,6 @@
     "com.lion328.thaifixes.ThaiFixesMod"
   ],
   "requires": {
-    "fabric": "*"
   },
   "mixins": {
     "client": "thaifixes.client.json"
