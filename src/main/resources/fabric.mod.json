@@ -1,0 +1,16 @@
+{
+  "id": "thaifixes",
+  "name": "ThaiFixes",
+  "description": "Make Thai language in Minecraft looks better",
+  "version": "1.0.0",
+  "side": "client",
+  "initializers": [
+    "com.lion328.thaifixes.ThaiFixesMod"
+  ],
+  "requires": {
+    "fabric": "*"
+  },
+  "mixins": {
+    "client": "thaifixes.client.json"
+  }
+}
