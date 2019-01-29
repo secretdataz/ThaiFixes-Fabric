@@ -35,8 +35,18 @@ public class MixinFontStorage {
             height = 1.99f;
         }
 
-        GlyphRenderer newGlyphRenderer = new GlyphRenderer(glyphRenderer.getId(), converted.UMin() + posYShift / 128.0f, converted.UMin() + height / 128.0f, converted.VMin(), converted.VMax(), converted.XMin() - advanceGlyph.getRealAdvance(), converted.XMax() - advanceGlyph.getRealAdvance(), converted.YMin() + posYShift, converted.YMax() + height);
         ThaiFixesMod.processingThaiChars.remove(glyph);
+        float v0 = converted.VMin() + posYShift / 128.0f;
+        float y0 = converted.YMin() + posYShift;
+        GlyphRenderer newGlyphRenderer = new GlyphRenderer(glyphRenderer.getId(),
+                converted.UMin(),
+                converted.UMax(),
+                v0,
+                v0 + height / 128.0f,
+                converted.XMin() - thaiFixesGlyph.getRealAdvance(),
+                converted.XMax() - thaiFixesGlyph.getRealAdvance(),
+                y0,
+                y0 + height);
 
         ci.setReturnValue(newGlyphRenderer);
     }
