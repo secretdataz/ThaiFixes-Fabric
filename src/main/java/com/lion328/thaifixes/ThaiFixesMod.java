@@ -11,7 +11,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ThaiFixesMod implements ModInitializer {
 
 	private static Logger logger;
-	public static Map<RenderableGlyph, Boolean> processingThaiChars = new ConcurrentHashMap<>();
 
 	@Override
 	public void onInitialize() {

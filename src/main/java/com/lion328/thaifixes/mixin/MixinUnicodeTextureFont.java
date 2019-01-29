@@ -1,6 +1,6 @@
 package com.lion328.thaifixes.mixin;
 
-import com.lion328.thaifixes.IVariableAdvanceGlyph;
+import com.lion328.thaifixes.IThaiFixesGlyph;
 import com.lion328.thaifixes.ThaiFixesMod;
 import com.lion328.thaifixes.ThaiUtil;
 import net.minecraft.client.font.RenderableGlyph;
@@ -19,9 +19,9 @@ public class MixinUnicodeTextureFont {
             return;
         }
 
-        IVariableAdvanceGlyph glyph = (IVariableAdvanceGlyph)ci.getReturnValue();
+        IThaiFixesGlyph glyph = (IThaiFixesGlyph)ci.getReturnValue();
         glyph.setRemoveAdvance(true);
-
-        ThaiFixesMod.processingThaiChars.put(ci.getReturnValue(), ThaiUtil.isHangingBelowThaiChar(c));
+        glyph.setThaiFixesFlag(true);
+        glyph.setCharacter(c);
     }
 }
