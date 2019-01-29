@@ -4,9 +4,9 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "MixinUnicodeTextureFont",
+    "MixinUnicodeTextureGlyph",
     "MixinGlyphRenderer",
-    "MixinFontStorage",
-    "MixinFontRenderer"
+    "MixinFontStorage"
   ],
   "injectors": {
     "defaultRequire": 1

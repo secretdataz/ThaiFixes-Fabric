@@ -1,6 +1,7 @@
 package com.lion328.thaifixes.mixin;
 
 import com.lion328.thaifixes.IGlyphRenderer;
+import com.lion328.thaifixes.IVariableAdvanceGlyph;
 import com.lion328.thaifixes.ThaiFixesMod;
 import net.minecraft.client.font.FontStorage;
 import net.minecraft.client.font.GlyphRenderer;
@@ -21,6 +22,7 @@ public class MixinFontStorage {
 
         GlyphRenderer glyphRenderer = ci.getReturnValue();
         IGlyphRenderer converted = (IGlyphRenderer)glyphRenderer;
+        IVariableAdvanceGlyph advanceGlyph = (IVariableAdvanceGlyph)glyph;
 
         boolean hangBelow = ThaiFixesMod.processingThaiChars.get(glyph);
 
@@ -33,7 +35,7 @@ public class MixinFontStorage {
             height = 1.99f;
         }
 
-        GlyphRenderer newGlyphRenderer = new GlyphRenderer(glyphRenderer.getId(), converted.UMin() + posYShift / 128.0f, converted.UMin() + height / 128.0f, converted.VMin(), converted.VMax(), converted.XMin() - glyph.getAdvance(), converted.XMax() - glyph.getAdvance(), converted.YMin() + posYShift, converted.YMax() + height);
+        GlyphRenderer newGlyphRenderer = new GlyphRenderer(glyphRenderer.getId(), converted.UMin() + posYShift / 128.0f, converted.UMin() + height / 128.0f, converted.VMin(), converted.VMax(), converted.XMin() - advanceGlyph.getRealAdvance(), converted.XMax() - advanceGlyph.getRealAdvance(), converted.YMin() + posYShift, converted.YMax() + height);
         ThaiFixesMod.processingThaiChars.remove(glyph);
 
         ci.setReturnValue(newGlyphRenderer);
