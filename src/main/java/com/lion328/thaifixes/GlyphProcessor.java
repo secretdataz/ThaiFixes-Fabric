@@ -35,15 +35,15 @@ public class GlyphProcessor {
             height = 1.99f;
         }
 
-        float v0 = converted.VMin() + posYShift / 128.0f;
-        float y0 = converted.YMin() + posYShift;
+        float v0 = converted.thaiFixesVMin() + posYShift / 128.0f;
+        float y0 = converted.thaiFixesYMin() + posYShift;
         return new GlyphRenderer(originalReturnValue.getId(),
-                converted.UMin(),
-                converted.UMax(),
+                converted.thaiFixesUMin(),
+                converted.thaiFixesUMax(),
                 v0,
                 v0 + height / 128.0f,
-                converted.XMin() - thaiFixesGlyph.getRealAdvance(),
-                converted.XMax() - thaiFixesGlyph.getRealAdvance(),
+                converted.thaiFixesXMin() - thaiFixesGlyph.getRealAdvance(),
+                converted.thaiFixesXMax() - thaiFixesGlyph.getRealAdvance(),
                 y0,
                 y0 + height);
     }
@@ -64,13 +64,13 @@ public class GlyphProcessor {
         }
 
         return new GlyphRenderer(originalReturnValue.getId(),
-                converted.UMin(),
-                converted.UMax(),
-                converted.VMin(),
-                converted.VMax(),
-                converted.XMin() + x_offset,
-                converted.XMax() + x_offset,
-                converted.YMin() - y_offset,
-                converted.YMax() - y_offset);
+                converted.thaiFixesUMin(),
+                converted.thaiFixesUMax(),
+                converted.thaiFixesVMin(),
+                converted.thaiFixesVMax(),
+                converted.thaiFixesXMin() + x_offset,
+                converted.thaiFixesXMax() + x_offset,
+                converted.thaiFixesYMin() - y_offset,
+                converted.thaiFixesYMax() - y_offset);
     }
 }

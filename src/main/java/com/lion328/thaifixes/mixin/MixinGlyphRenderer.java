@@ -42,42 +42,42 @@ public abstract class MixinGlyphRenderer implements IGlyphRenderer {
     }
 
     @Override
-    public float UMin() {
+    public float thaiFixesUMin() {
         return uMin;
     }
 
     @Override
-    public float UMax() {
+    public float thaiFixesUMax() {
         return uMax;
     }
 
     @Override
-    public float VMin() {
+    public float thaiFixesVMin() {
         return vMin;
     }
 
     @Override
-    public float VMax() {
+    public float thaiFixesVMax() {
         return vMax;
     }
 
     @Override
-    public float XMin() {
+    public float thaiFixesXMin() {
         return xMin;
     }
 
     @Override
-    public float XMax() {
+    public float thaiFixesXMax() {
         return xMax;
     }
 
     @Override
-    public float YMin() {
+    public float thaiFixesYMin() {
         return yMin;
     }
 
     @Override
-    public float YMax() {
+    public float thaiFixesYMax() {
         return yMax;
     }
 }
