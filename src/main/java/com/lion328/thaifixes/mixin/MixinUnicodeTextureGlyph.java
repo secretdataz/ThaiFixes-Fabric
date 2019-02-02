@@ -1,6 +1,6 @@
 package com.lion328.thaifixes.mixin;
 
-import com.lion328.thaifixes.IThaiFixesGlyph;
+import com.lion328.thaifixes.IThaiFixesUnicodeGlyph;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(targets = {"net.minecraft.client.font.UnicodeTextureFont$UnicodeTextureGlyph"}, priority = 500)
-public abstract class MixinUnicodeTextureGlyph implements IThaiFixesGlyph {
+public abstract class MixinUnicodeTextureGlyph implements IThaiFixesUnicodeGlyph {
 
     private boolean shouldRemoveAdvance = false;
     private boolean thaiFixesFlag = false;

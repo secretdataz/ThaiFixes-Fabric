@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(GlyphRenderer.class)
-public class MixinGlyphRenderer implements IGlyphRenderer {
+public abstract class MixinGlyphRenderer implements IGlyphRenderer {
 
     @Shadow
     private Identifier id;

@@ -62,4 +62,8 @@ public class ThaiUtil
     {
         return LONG_TAIL_CHARS.indexOf(c) != -1;
     }
+
+    public static boolean isEligibleForTrueTypeCorrection(char c) {
+        return isHangingThaiChar(c) || c == SARA_UM;
+    }
 }

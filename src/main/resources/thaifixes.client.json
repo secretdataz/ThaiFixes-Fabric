@@ -6,7 +6,9 @@
     "MixinUnicodeTextureFont",
     "MixinUnicodeTextureGlyph",
     "MixinGlyphRenderer",
-    "MixinFontStorage"
+    "MixinFontStorage",
+    "MixinTrueTypeFont",
+    "MixinTtfGlyph"
   ],
   "injectors": {
     "defaultRequire": 1
