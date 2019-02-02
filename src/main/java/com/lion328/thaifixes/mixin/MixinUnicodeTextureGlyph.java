@@ -10,16 +10,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(targets = {"net.minecraft.client.font.UnicodeTextureFont$UnicodeTextureGlyph"}, priority = 500)
 public abstract class MixinUnicodeTextureGlyph implements IThaiFixesUnicodeGlyph {
 
-    private boolean shouldRemoveAdvance = false;
+    private boolean thaiFixesShouldRemoveAdvance = false;
     private boolean thaiFixesFlag = false;
-    private char character;
+    private char thaiFixesCharacter;
 
     @Shadow
     public int width;
 
     @Inject(method="getAdvance()F", at=@At("HEAD"), cancellable = true, remap = false)
     public void getAdvance(CallbackInfoReturnable<Float> ci) {
-        if(shouldRemoveAdvance) {
+        if(thaiFixesShouldRemoveAdvance) {
             ci.setReturnValue(0.0f);
         }
     }
@@ -30,12 +30,12 @@ public abstract class MixinUnicodeTextureGlyph implements IThaiFixesUnicodeGlyph
 
     @Override
     public boolean shouldRemoveAdvance() {
-        return shouldRemoveAdvance;
+        return thaiFixesShouldRemoveAdvance;
     }
 
     @Override
     public void setRemoveAdvance(boolean flag) {
-        shouldRemoveAdvance = flag;
+        thaiFixesShouldRemoveAdvance = flag;
     }
 
     @Override
@@ -49,12 +49,12 @@ public abstract class MixinUnicodeTextureGlyph implements IThaiFixesUnicodeGlyph
     }
 
     @Override
-    public char getCharacter() {
-        return character;
+    public char getThaiFixesCharacter() {
+        return thaiFixesCharacter;
     }
 
     @Override
-    public void setCharacter(char character) {
-        this.character = character;
+    public void setThaiFixesCharacter(char thaiFixesCharacter) {
+        this.thaiFixesCharacter = thaiFixesCharacter;
     }
 }

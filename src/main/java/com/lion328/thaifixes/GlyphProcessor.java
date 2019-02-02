@@ -25,7 +25,7 @@ public class GlyphProcessor {
 
         IGlyphRenderer converted = (IGlyphRenderer) originalReturnValue;
 
-        boolean hangBelow = ThaiUtil.isHangingBelowThaiChar(thaiFixesGlyph.getCharacter());
+        boolean hangBelow = ThaiUtil.isHangingBelowThaiChar(thaiFixesGlyph.getThaiFixesCharacter());
 
         float posYShift = 0.0f;
         float height = 2.99f;
@@ -56,10 +56,10 @@ public class GlyphProcessor {
 
         IGlyphRenderer converted = (IGlyphRenderer)originalReturnValue;
 
-        float x_offset = glyph.getWidth() / thaiFixesGlyph.getBfOversample() * 1.22f;
-        float y_offset = ThaiUtil.isHangingAllAboveThaiChar(thaiFixesGlyph.getCharacter()) ? glyph.getHeight() / thaiFixesGlyph.getBfOversample() : 0.0f;
+        float x_offset = glyph.getWidth() / thaiFixesGlyph.getThaiFixesOversample() * 1.22f;
+        float y_offset = ThaiUtil.isHangingAllAboveThaiChar(thaiFixesGlyph.getThaiFixesCharacter()) ? glyph.getHeight() / thaiFixesGlyph.getThaiFixesOversample() : 0.0f;
 
-        if(thaiFixesGlyph.getCharacter() == ThaiUtil.SARA_UM) {
+        if(thaiFixesGlyph.getThaiFixesCharacter() == ThaiUtil.SARA_UM) {
             x_offset = glyph.getWidth() * 0.1f;
         }
 

@@ -21,6 +21,6 @@ public abstract class MixinUnicodeTextureFont {
         IThaiFixesUnicodeGlyph glyph = (IThaiFixesUnicodeGlyph)ci.getReturnValue();
         glyph.setRemoveAdvance(true);
         glyph.setThaiFixesFlag(true);
-        glyph.setCharacter(c);
+        glyph.setThaiFixesCharacter(c);
     }
 }
