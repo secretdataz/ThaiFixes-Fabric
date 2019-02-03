@@ -1,0 +1,11 @@
+{
+  "id": "thaifixes",
+  "name": "ThaiFixes",
+  "authors": [
+    "lion328",
+    "secretdataz"
+  ],
+  "listeners": [
+    "com.lion328.thaifixes.ThaiFixesMod"
+  ]
+}

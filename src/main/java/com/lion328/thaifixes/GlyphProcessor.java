@@ -1,11 +1,11 @@
 package com.lion328.thaifixes;
 
-import net.minecraft.client.font.GlyphRenderer;
-import net.minecraft.client.font.RenderableGlyph;
+import net.minecraft.client.gui.fonts.IGlyphInfo;
+import net.minecraft.client.gui.fonts.TexturedGlyph;
 
 public class GlyphProcessor {
 
-    public static GlyphRenderer processGlyph(RenderableGlyph glyph, GlyphRenderer gr) {
+    public static TexturedGlyph processGlyph(IGlyphInfo glyph, TexturedGlyph gr) {
         if(glyph instanceof IThaiFixesUnicodeGlyph) {
             return processUnicodeTextureGlyph(glyph, gr);
         }
@@ -17,7 +17,7 @@ public class GlyphProcessor {
         }
     }
 
-    private static GlyphRenderer processUnicodeTextureGlyph(RenderableGlyph glyph, GlyphRenderer originalReturnValue) {
+    private static TexturedGlyph processUnicodeTextureGlyph(IGlyphInfo glyph, TexturedGlyph originalReturnValue) {
         IThaiFixesUnicodeGlyph thaiFixesGlyph = (IThaiFixesUnicodeGlyph) glyph;
 
         if (!thaiFixesGlyph.getThaiFixesFlag())
@@ -37,7 +37,7 @@ public class GlyphProcessor {
 
         float v0 = converted.thaiFixesVMin() + posYShift / 128.0f;
         float y0 = converted.thaiFixesYMin() + posYShift;
-        return new GlyphRenderer(originalReturnValue.getId(),
+        return new TexturedGlyph(originalReturnValue.getTextureLocation(),
                 converted.thaiFixesUMin(),
                 converted.thaiFixesUMax(),
                 v0,
@@ -48,7 +48,7 @@ public class GlyphProcessor {
                 y0 + height);
     }
 
-    private static GlyphRenderer processTrueTypeGlyph(RenderableGlyph glyph, GlyphRenderer originalReturnValue) {
+    private static TexturedGlyph processTrueTypeGlyph(IGlyphInfo glyph, TexturedGlyph originalReturnValue) {
         IThaiFixesTrueTypeGlyph thaiFixesGlyph = (IThaiFixesTrueTypeGlyph)glyph;
 
         if(!thaiFixesGlyph.getThaiFixesFlag())
@@ -63,7 +63,7 @@ public class GlyphProcessor {
             x_offset = glyph.getWidth() * 0.1f;
         }
 
-        return new GlyphRenderer(originalReturnValue.getId(),
+        return new TexturedGlyph(originalReturnValue.getTextureLocation(),
                 converted.thaiFixesUMin(),
                 converted.thaiFixesUMax(),
                 converted.thaiFixesVMin(),

@@ -1,9 +1,9 @@
 package com.lion328.thaifixes;
 
-import net.minecraft.util.Identifier;
+import net.minecraft.util.ResourceLocation;
 
 public interface IGlyphRenderer {
-    Identifier getIdentifier();
+    ResourceLocation getThaiFixesIdentifier();
     float thaiFixesUMin();
     float thaiFixesUMax();
     float thaiFixesVMin();

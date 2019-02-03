@@ -3,7 +3,7 @@ package com.lion328.thaifixes.mixin;
 import com.lion328.thaifixes.IThaiFixesTrueTypeGlyph;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(targets = {"net.minecraft.client.font.TrueTypeFont$TtfGlyph"})
+@Mixin(targets = {"net.minecraft.client.gui.fonts.providers.TrueTypeGlyphProvider$GlpyhInfo"})
 public abstract class MixinTtfGlyph implements IThaiFixesTrueTypeGlyph {
 
     private boolean thaiFixesFlag = false;

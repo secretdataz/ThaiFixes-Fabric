@@ -1,14 +1,15 @@
 {
   "required": true,
+  "minVersion": "0.7.4",
   "package": "com.lion328.thaifixes.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "refmap": "mixins.thaifixes.refmap.json",
   "mixins": [
-    "MixinUnicodeTextureFont",
-    "MixinUnicodeTextureGlyph",
-    "MixinGlyphRenderer",
     "MixinFontStorage",
+    "MixinGlyphRenderer",
     "MixinTrueTypeFont",
-    "MixinTtfGlyph"
+    "MixinTtfGlyph",
+    "MixinUnicodeTextureFont",
+    "MixinUnicodeTextureGlyph"
   ],
   "injectors": {
     "defaultRequire": 1
