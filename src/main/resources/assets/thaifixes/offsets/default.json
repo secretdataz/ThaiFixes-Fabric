@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "offsets": [
+    {
+      "characters": "\u0E38\u0E39\u0E3A",
+      "textured": {
+        "yOffset": "6.0",
+        "heightOffset": "1.99"
+      },
+      "trueType": {
+        "trueTypeXOffsetMultiplier": "1.22",
+        "trueTypeYOffsetMultiplier": "0.0"
+      }
+    },
+    {
+      "characters": "\u0E31\u0E34\u0E35\u0E36\u0E37\u0E47\u0E4C\u0E4D\u0E4E",
+      "textured": {
+        "yOffset": "0.0",
+        "heightOffset": "2.99"
+      },
+      "trueType": {
+        "trueTypeXOffsetMultiplier": "1.22",
+        "trueTypeYOffsetMultiplier": "0.0"
+      }
+    },
+    {
+      "characters": "\u0E33",
+      "textured": {
+        "yOffset": "0.0",
+        "heightOffset": "0.0"
+      },
+      "trueType": {
+        "trueTypeXOffsetMultiplier": "0.4",
+        "trueTypeYOffsetMultiplier": "0.0"
+      }
+    },
+    {
+      "characters": "\u0E48\u0E49\u0E4A\u0E4B",
+      "textured": {
+        "yOffset": "0.0",
+        "heightOffset": "2.99"
+      },
+      "trueType": {
+        "trueTypeXOffsetMultiplier": "1.22",
+        "trueTypeYOffsetMultiplier": "1.0"
+      }
+    }
+  ]
+}

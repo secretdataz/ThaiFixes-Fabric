@@ -1,7 +1,7 @@
 package com.lion328.thaifixes.mixin;
 
 import com.lion328.thaifixes.IThaiFixesUnicodeGlyph;
-import com.lion328.thaifixes.ThaiUtil;
+import com.lion328.thaifixes.ThaiFixesMod;
 import net.minecraft.client.font.RenderableGlyph;
 import net.minecraft.client.font.UnicodeTextureFont;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,7 +14,7 @@ public abstract class MixinUnicodeTextureFont {
 
     @Inject(method="getGlyph", at = @At("RETURN"), cancellable = true)
     private void getGlyph(char c, CallbackInfoReturnable<RenderableGlyph> ci) {
-        if(!ThaiUtil.isHangingThaiChar(c)) {
+        if(ThaiFixesMod.texturedGlyphOffsetMap.get(c) == null) {
             return;
         }
 

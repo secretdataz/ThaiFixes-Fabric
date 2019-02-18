@@ -25,15 +25,8 @@ public class GlyphProcessor {
 
         IGlyphRenderer converted = (IGlyphRenderer) originalReturnValue;
 
-        boolean hangBelow = ThaiUtil.isHangingBelowThaiChar(thaiFixesGlyph.getThaiFixesCharacter());
-
-        float posYShift = 0.0f;
-        float height = 2.99f;
-
-        if (hangBelow) {
-            posYShift = 6.0f;
-            height = 1.99f;
-        }
+        float posYShift = ThaiFixesMod.texturedGlyphOffsetMap.get(thaiFixesGlyph.getThaiFixesCharacter()).yOffset;
+        float height = ThaiFixesMod.texturedGlyphOffsetMap.get(thaiFixesGlyph.getThaiFixesCharacter()).heightOffset;
 
         float v0 = converted.thaiFixesVMin() + posYShift / 128.0f;
         float y0 = converted.thaiFixesYMin() + posYShift;
@@ -56,12 +49,8 @@ public class GlyphProcessor {
 
         IGlyphRenderer converted = (IGlyphRenderer)originalReturnValue;
 
-        float x_offset = glyph.getWidth() / thaiFixesGlyph.getThaiFixesOversample() * 1.22f;
-        float y_offset = ThaiUtil.isHangingAllAboveThaiChar(thaiFixesGlyph.getThaiFixesCharacter()) ? glyph.getHeight() / thaiFixesGlyph.getThaiFixesOversample() : 0.0f;
-
-        if(thaiFixesGlyph.getThaiFixesCharacter() == ThaiUtil.SARA_UM) {
-            x_offset = glyph.getWidth() * 0.1f;
-        }
+        float x_offset = glyph.getWidth() / thaiFixesGlyph.getThaiFixesOversample() * ThaiFixesMod.trueTypeGlyphOffsetMap.get(thaiFixesGlyph.getThaiFixesCharacter()).trueTypeXOffsetMultiplier;
+        float y_offset = glyph.getHeight() / thaiFixesGlyph.getThaiFixesOversample() * ThaiFixesMod.trueTypeGlyphOffsetMap.get(thaiFixesGlyph.getThaiFixesCharacter()).trueTypeYOffsetMultiplier;
 
         return new GlyphRenderer(originalReturnValue.getId(),
                 converted.thaiFixesUMin(),

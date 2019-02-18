@@ -1,7 +1,7 @@
 package com.lion328.thaifixes.mixin;
 
 import com.lion328.thaifixes.IThaiFixesTrueTypeGlyph;
-import com.lion328.thaifixes.ThaiUtil;
+import com.lion328.thaifixes.ThaiFixesMod;
 import net.minecraft.client.font.RenderableGlyph;
 import net.minecraft.client.font.TrueTypeFont;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,9 +16,9 @@ public abstract class MixinTrueTypeFont {
     @Shadow
     private float oversample;
 
-    @Inject(method = "method_2051", at = @At("RETURN"), cancellable = true) // remap?
+    @Inject(method = "method_2051", at = @At("RETURN"), cancellable = true)
     private void onGetGlyph(char c, CallbackInfoReturnable<RenderableGlyph> ci) {
-        if(!ThaiUtil.isEligibleForTrueTypeCorrection(c)) {
+        if(ThaiFixesMod.trueTypeGlyphOffsetMap.get(c) == null) {
             return;
         }
 
