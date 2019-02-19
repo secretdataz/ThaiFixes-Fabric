@@ -2,7 +2,7 @@
   "version": 1,
   "offsets": [
     {
-      "characters": "\u0E38\u0E39\u0E3A",
+      "characters": "\u0E38\u0E39\u0E3A\u0EB8\u0EB9\u0EBC",
       "textured": {
         "yOffset": "6.0",
         "heightOffset": "1.99"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "characters": "\u0E31\u0E34\u0E35\u0E36\u0E37\u0E47\u0E4C\u0E4D\u0E4E",
+      "characters": "\u0E31\u0E34\u0E35\u0E36\u0E37\u0E47\u0E4C\u0E4D\u0E4E\u0EB2\u0EB4\u0EB5\u0EB6\u0EB7\u0EBB\u0ECC\u0ECD",
       "textured": {
         "yOffset": "0.0",
         "heightOffset": "2.99"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "characters": "\u0E33",
+      "characters": "\u0E33\u0EB3",
       "textured": {
         "yOffset": "0.0",
         "heightOffset": "0.0"
@@ -35,7 +35,7 @@
       }
     },
     {
-      "characters": "\u0E48\u0E49\u0E4A\u0E4B",
+      "characters": "\u0E48\u0E49\u0E4A\u0E4B\u0EC8\u0EC9\u0ECA\u0ECB",
       "textured": {
         "yOffset": "0.0",
         "heightOffset": "2.99"
