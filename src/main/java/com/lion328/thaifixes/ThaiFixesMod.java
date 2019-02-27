@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class ThaiFixesMod implements ModInitializer {
@@ -38,27 +37,33 @@ public class ThaiFixesMod implements ModInitializer {
 
 			@Override
 			public void apply(ResourceManager resourceManager) {
-				Gson gson = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
-				resourceManager.findResources("offsets", s -> s.endsWith(".json")).forEach(e -> {
-					if(!e.getNamespace().equals("thaifixes")) return;
+                getLogger().info("Reloading ThaiFixes offset configurations.");
+                Gson gson = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
+                resourceManager.findResources("offsets", s -> s.endsWith(".json")).forEach(e -> {
+                    if (!e.getNamespace().equals("thaifixes")) return;
                     try {
                         resourceManager.getAllResources(e).forEach(res -> {
                             try {
+                                getLogger().info("Reading ThaiFixes offset configuration file " + e.getNamespace() + ":" + e.getPath());
                                 InputStream is = res.getInputStream();
                                 OffsetConfigContainer container = JsonHelper.deserialize(gson, IOUtils.toString(is, StandardCharsets.UTF_8), OffsetConfigContainer.class);
+                                if(container.version != OFFSETS_CONFIG_VERSION) {
+                                    getLogger().warn("Found outdated ThaiFixes offset configuration file " + e.getNamespace() + ":" + e.getPath());
+                                    return;
+                                }
                                 container.offsets.forEach(offset -> {
-                                    for(char c : offset.characters.toCharArray()) {
-                                        if(offset.textured != null) {
+                                    for (char c : offset.characters.toCharArray()) {
+                                        if (offset.textured != null) {
                                             texturedGlyphOffsetMap.put(c, offset.textured);
                                         }
-                                        if(offset.trueType != null) {
+                                        if (offset.trueType != null) {
                                             trueTypeGlyphOffsetMap.put(c, offset.trueType);
                                         }
                                     }
                                 });
-                            } catch(IOException ex) {
+                            } catch (IOException ex) {
                                 ex.printStackTrace();
-                            } catch(JsonParseException jsonEx) {
+                            } catch (JsonParseException jsonEx) {
                                 jsonEx.printStackTrace();
                             }
                         });
@@ -66,7 +71,7 @@ public class ThaiFixesMod implements ModInitializer {
                         e1.printStackTrace();
                     }
                 });
-				getLogger().info("ThaiFixes is done reloading offset config.");
+                getLogger().info("ThaiFixes is done reloading offset config.");
 			}
 		});
 	}
