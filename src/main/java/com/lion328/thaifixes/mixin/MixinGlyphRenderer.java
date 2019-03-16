@@ -1,83 +1,37 @@
 package com.lion328.thaifixes.mixin;
 
-import com.lion328.thaifixes.IGlyphRenderer;
 import net.minecraft.client.font.GlyphRenderer;
 import net.minecraft.util.Identifier;
+import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(GlyphRenderer.class)
-public abstract class MixinGlyphRenderer implements IGlyphRenderer {
+public interface MixinGlyphRenderer {
+    @Accessor(value = "id")
+    Identifier getIdentifier();
 
-    @Shadow
-    private Identifier id;
+    @Accessor(value = "uMin")
+    float thaiFixesUMin();
 
-    @Shadow
-    private float uMin;
+    @Accessor(value = "uMax")
+    float thaiFixesUMax();
 
-    @Shadow
-    private float uMax;
+    @Accessor(value = "vMin")
+    float thaiFixesVMin();
 
-    @Shadow
-    private float vMin;
+    @Accessor(value = "vMax")
+    float thaiFixesVMax();
 
-    @Shadow
-    private float vMax;
+    @Accessor(value = "xMin")
+    float thaiFixesXMin();
 
-    @Shadow
-    private float xMin;
+    @Accessor(value = "xMax")
+    float thaiFixesXMax();
 
-    @Shadow
-    private float xMax;
+    @Accessor(value = "yMin")
+    float thaiFixesYMin();
 
-    @Shadow
-    private float yMin;
-
-    @Shadow
-    private float yMax;
-
-    @Override
-    public Identifier getIdentifier() {
-        return id;
-    }
-
-    @Override
-    public float thaiFixesUMin() {
-        return uMin;
-    }
-
-    @Override
-    public float thaiFixesUMax() {
-        return uMax;
-    }
-
-    @Override
-    public float thaiFixesVMin() {
-        return vMin;
-    }
-
-    @Override
-    public float thaiFixesVMax() {
-        return vMax;
-    }
-
-    @Override
-    public float thaiFixesXMin() {
-        return xMin;
-    }
-
-    @Override
-    public float thaiFixesXMax() {
-        return xMax;
-    }
-
-    @Override
-    public float thaiFixesYMin() {
-        return yMin;
-    }
-
-    @Override
-    public float thaiFixesYMax() {
-        return yMax;
-    }
+    @Accessor(value = "yMax")
+    float thaiFixesYMax();
 }

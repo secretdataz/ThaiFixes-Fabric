@@ -1,5 +1,6 @@
 package com.lion328.thaifixes;
 
+import com.lion328.thaifixes.mixin.MixinGlyphRenderer;
 import net.minecraft.client.font.GlyphRenderer;
 import net.minecraft.client.font.RenderableGlyph;
 
@@ -23,7 +24,7 @@ public class GlyphProcessor {
         if (!thaiFixesGlyph.getThaiFixesFlag())
             return null;
 
-        IGlyphRenderer converted = (IGlyphRenderer) originalReturnValue;
+        MixinGlyphRenderer converted = (MixinGlyphRenderer) originalReturnValue;
 
         float posYShift = ThaiFixesMod.texturedGlyphOffsetMap.get(thaiFixesGlyph.getThaiFixesCharacter()).yOffset;
         float height = ThaiFixesMod.texturedGlyphOffsetMap.get(thaiFixesGlyph.getThaiFixesCharacter()).heightOffset;
@@ -47,7 +48,7 @@ public class GlyphProcessor {
         if(!thaiFixesGlyph.getThaiFixesFlag())
             return null;
 
-        IGlyphRenderer converted = (IGlyphRenderer)originalReturnValue;
+        MixinGlyphRenderer converted = (MixinGlyphRenderer)originalReturnValue;
 
         float x_offset = glyph.getWidth() / thaiFixesGlyph.getThaiFixesOversample() * ThaiFixesMod.trueTypeGlyphOffsetMap.get(thaiFixesGlyph.getThaiFixesCharacter()).trueTypeXOffsetMultiplier;
         float y_offset = glyph.getHeight() / thaiFixesGlyph.getThaiFixesOversample() * ThaiFixesMod.trueTypeGlyphOffsetMap.get(thaiFixesGlyph.getThaiFixesCharacter()).trueTypeYOffsetMultiplier;

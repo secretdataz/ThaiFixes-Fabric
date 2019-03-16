@@ -23,6 +23,9 @@ public abstract class MixinTrueTypeFont {
         }
 
         IThaiFixesTrueTypeGlyph glyph = (IThaiFixesTrueTypeGlyph) ci.getReturnValue();
+        if(glyph == null)
+            return;
+        
         glyph.setThaiFixesFlag(true);
         glyph.setThaiFixesCharacter(c);
         glyph.setThaiFixesOversample(oversample);
