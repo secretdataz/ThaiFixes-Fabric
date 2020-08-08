@@ -16,7 +16,7 @@ public abstract class MixinTrueTypeFont {
     @Shadow
     private float oversample;
 
-    @Inject(method = "method_2051", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "getGlyph", at = @At("RETURN"), cancellable = true)
     private void onGetGlyph(char c, CallbackInfoReturnable<RenderableGlyph> ci) {
         if(ThaiFixesMod.trueTypeGlyphOffsetMap.get(c) == null) {
             return;

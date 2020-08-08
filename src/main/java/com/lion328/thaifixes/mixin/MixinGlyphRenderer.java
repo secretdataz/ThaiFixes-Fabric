@@ -1,6 +1,7 @@
 package com.lion328.thaifixes.mixin;
 
 import net.minecraft.client.font.GlyphRenderer;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.Mixin;
@@ -8,8 +9,11 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(GlyphRenderer.class)
 public interface MixinGlyphRenderer {
-    @Accessor(value = "id")
-    Identifier getIdentifier();
+    @Accessor(value = "field_21692")
+    RenderLayer getRenderLayer1();
+
+    @Accessor(value = "field_21693")
+    RenderLayer getRenderLayer2();
 
     @Accessor(value = "uMin")
     float thaiFixesUMin();

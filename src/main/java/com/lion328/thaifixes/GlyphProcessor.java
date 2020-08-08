@@ -31,7 +31,9 @@ public class GlyphProcessor {
 
         float v0 = converted.thaiFixesVMin() + posYShift / 128.0f;
         float y0 = converted.thaiFixesYMin() + posYShift;
-        return new GlyphRenderer(originalReturnValue.getId(),
+        return new GlyphRenderer(
+                converted.getRenderLayer1(),
+                converted.getRenderLayer2(),
                 converted.thaiFixesUMin(),
                 converted.thaiFixesUMax(),
                 v0,
@@ -53,7 +55,9 @@ public class GlyphProcessor {
         float x_offset = glyph.getWidth() / thaiFixesGlyph.getThaiFixesOversample() * ThaiFixesMod.trueTypeGlyphOffsetMap.get(thaiFixesGlyph.getThaiFixesCharacter()).trueTypeXOffsetMultiplier;
         float y_offset = glyph.getHeight() / thaiFixesGlyph.getThaiFixesOversample() * ThaiFixesMod.trueTypeGlyphOffsetMap.get(thaiFixesGlyph.getThaiFixesCharacter()).trueTypeYOffsetMultiplier;
 
-        return new GlyphRenderer(originalReturnValue.getId(),
+        return new GlyphRenderer(
+                converted.getRenderLayer1(),
+                converted.getRenderLayer2(),
                 converted.thaiFixesUMin(),
                 converted.thaiFixesUMax(),
                 converted.thaiFixesVMin(),

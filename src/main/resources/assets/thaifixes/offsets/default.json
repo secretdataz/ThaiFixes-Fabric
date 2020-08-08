@@ -10,18 +10,20 @@
       "trueType": {
         "trueTypeXOffsetMultiplier": "1.22",
         "trueTypeYOffsetMultiplier": "0.0"
-      }
+      },
+      "comment": "THA SARA U, THA SARA UU, THA PINTHU, LAO VOWEL U, LAO VOWEL UU, LAO SIGN LO"
     },
     {
-      "characters": "\u0E31\u0E34\u0E35\u0E36\u0E37\u0E47\u0E4C\u0E4D\u0E4E\u0EB2\u0EB4\u0EB5\u0EB6\u0EB7\u0EBB\u0ECC\u0ECD",
+      "characters": "\u0E34\u0E35\u0E36\u0E37\u0E47\u0E4C\u0E4D\u0E4E\u0EB2\u0EB4\u0EB5\u0EB6\u0EB7\u0EBB\u0ECC\u0ECD",
       "textured": {
         "yOffset": "0.0",
         "heightOffset": "2.99"
       },
       "trueType": {
-        "trueTypeXOffsetMultiplier": "1.22",
+        "trueTypeXOffsetMultiplier": "1.35",
         "trueTypeYOffsetMultiplier": "0.0"
-      }
+      },
+      "comment": "THA SARA I, THA SARA II, THA SARA UE, THA SARA UEE, THA MAITAIKHU, THA THANTHAKAT, THA NIKHAHIT, THA YAMAKKAN, LAO SIGN AA, LAO SIGN I, LAO SIGN II, LAO SIGN Y, LAO SIGN MAI KON, LAO CANCELLATION MARK, LAO NIGGAHITA"
     },
     {
       "characters": "\u0E33\u0EB3",
@@ -32,7 +34,8 @@
       "trueType": {
         "trueTypeXOffsetMultiplier": "0.4",
         "trueTypeYOffsetMultiplier": "0.0"
-      }
+      },
+      "comment": "THA SARA AM, LAO SIGN AM"
     },
     {
       "characters": "\u0E48\u0E49\u0E4A\u0E4B\u0EC8\u0EC9\u0ECA\u0ECB",
@@ -43,7 +46,20 @@
       "trueType": {
         "trueTypeXOffsetMultiplier": "1.22",
         "trueTypeYOffsetMultiplier": "1.0"
-      }
+      },
+      "comment": "THA MAI EK, THA MAI THO, THA MAI TRI, THAI MAI CHATTHAWA, LAO MAI EK, LAO MAI THO, LAO MAI TI, LAO MAI CATAWA"
+    },
+    {
+      "characters": "\u0E31",
+      "textured": {
+        "yOffset": "0.0",
+        "heightOffset": "2.99"
+      },
+      "trueType": {
+        "trueTypeXOffsetMultiplier": "0.75",
+        "trueTypeYOffsetMultiplier": "0.0"
+      },
+      "comment": "THA MAI HAN AKAT"
     }
   ]
 }
