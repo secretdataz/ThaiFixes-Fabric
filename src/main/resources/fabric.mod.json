@@ -11,5 +11,8 @@
   },
   "mixins": {
     "client": "thaifixes.client.json"
+  },
+  "custom": {
+    "modmenu:clientsideOnly": true
   }
 }
