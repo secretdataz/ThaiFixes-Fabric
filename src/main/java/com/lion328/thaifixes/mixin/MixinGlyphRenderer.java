@@ -9,10 +9,10 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(GlyphRenderer.class)
 public interface MixinGlyphRenderer {
-    @Accessor(value = "field_21692")
+    @Accessor(value = "textLayer")
     RenderLayer getRenderLayer1();
 
-    @Accessor(value = "field_21693")
+    @Accessor(value = "seeThroughTextLayer")
     RenderLayer getRenderLayer2();
 
     @Accessor(value = "uMin")
