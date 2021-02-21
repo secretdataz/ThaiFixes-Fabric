@@ -12,7 +12,7 @@ public abstract class MixinUnicodeTextureGlyph implements IThaiFixesUnicodeGlyph
 
     private boolean thaiFixesShouldRemoveAdvance = false;
     private boolean thaiFixesFlag = false;
-    private char thaiFixesCharacter;
+    private int thaiFixesCharacter;
 
     @Shadow
     public int width;
@@ -49,12 +49,12 @@ public abstract class MixinUnicodeTextureGlyph implements IThaiFixesUnicodeGlyph
     }
 
     @Override
-    public char getThaiFixesCharacter() {
+    public int getThaiFixesCharacter() {
         return thaiFixesCharacter;
     }
 
     @Override
-    public void setThaiFixesCharacter(char thaiFixesCharacter) {
+    public void setThaiFixesCharacter(int thaiFixesCharacter) {
         this.thaiFixesCharacter = thaiFixesCharacter;
     }
 }
