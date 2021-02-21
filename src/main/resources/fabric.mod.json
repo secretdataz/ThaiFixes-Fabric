@@ -4,15 +4,21 @@
   "description": "Make Thai language in Minecraft looks better",
   "version": "1.1.4",
   "side": "client",
-  "initializers": [
-    "com.lion328.thaifixes.ThaiFixesMod"
-  ],
   "requires": {
   },
-  "mixins": {
-    "client": "thaifixes.client.json"
+  "mixins": [
+    {
+      "config": "thaifixes.client.json",
+      "environment": "client"
+    }
+  ],
+  "entrypoints": {
+    "client": [
+      "com.lion328.thaifixes.ThaiFixesMod"
+    ]
   },
   "custom": {
     "modmenu:clientsideOnly": true
-  }
+  },
+  "schemaVersion": 1
 }

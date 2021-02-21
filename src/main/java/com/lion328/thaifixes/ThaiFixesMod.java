@@ -2,7 +2,7 @@ package com.lion328.thaifixes;
 
 import com.google.gson.*;
 import com.lion328.thaifixes.config.OffsetConfigContainer;
-import net.fabricmc.api.ModInitializer;
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.ResourceManager;
@@ -19,16 +19,17 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ThaiFixesMod implements ModInitializer {
+public class ThaiFixesMod implements ClientModInitializer {
 
-    private static int OFFSETS_CONFIG_VERSION = 1;
-	private static Logger logger = LogManager.getLogger("ThaiFixes");
+    private static final int OFFSETS_CONFIG_VERSION = 1;
+	private static final Logger logger = LogManager.getLogger("ThaiFixes");
 
-	public static Map<Character, OffsetConfigContainer.TexturedGlyphOffsetConfig> texturedGlyphOffsetMap = new HashMap<>();
-    public static Map<Character, OffsetConfigContainer.TrueTypeGlyphOffsetConfig> trueTypeGlyphOffsetMap = new HashMap<>();
+	public static Map<Integer, OffsetConfigContainer.TexturedGlyphOffsetConfig> texturedGlyphOffsetMap = new HashMap<>();
+    public static Map<Integer, OffsetConfigContainer.TrueTypeGlyphOffsetConfig> trueTypeGlyphOffsetMap = new HashMap<>();
 
 	@Override
-	public void onInitialize() {
+	public void onInitializeClient() {
+	    getLogger().info("Registering resource reload listener.");
 		ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(new SimpleSynchronousResourceReloadListener() {
 			@Override
 			public Identifier getFabricId() {
@@ -54,10 +55,10 @@ public class ThaiFixesMod implements ModInitializer {
                                 container.offsets.forEach(offset -> {
                                     for (char c : offset.characters.toCharArray()) {
                                         if (offset.textured != null) {
-                                            texturedGlyphOffsetMap.put(c, offset.textured);
+                                            texturedGlyphOffsetMap.put((int)c, offset.textured);
                                         }
                                         if (offset.trueType != null) {
-                                            trueTypeGlyphOffsetMap.put(c, offset.trueType);
+                                            trueTypeGlyphOffsetMap.put((int)c, offset.trueType);
                                         }
                                     }
                                 });

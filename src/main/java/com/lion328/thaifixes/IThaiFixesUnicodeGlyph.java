@@ -6,6 +6,6 @@ public interface IThaiFixesUnicodeGlyph {
     float getRealAdvance();
     void setThaiFixesFlag(boolean flag);
     boolean getThaiFixesFlag();
-    void setThaiFixesCharacter(char c);
-    char getThaiFixesCharacter();
+    void setThaiFixesCharacter(int i);
+    int getThaiFixesCharacter();
 }

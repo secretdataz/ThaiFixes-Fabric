@@ -13,8 +13,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class MixinUnicodeTextureFont {
 
     @Inject(method="getGlyph", at = @At("RETURN"), cancellable = true)
-    private void getGlyph(char c, CallbackInfoReturnable<RenderableGlyph> ci) {
-        if(ThaiFixesMod.texturedGlyphOffsetMap.get(c) == null) {
+    private void getGlyph(int i, CallbackInfoReturnable<RenderableGlyph> ci) {
+        if(ThaiFixesMod.texturedGlyphOffsetMap.get(i) == null) {
             return;
         }
 
@@ -24,6 +24,6 @@ public abstract class MixinUnicodeTextureFont {
         
         glyph.setRemoveAdvance(true);
         glyph.setThaiFixesFlag(true);
-        glyph.setThaiFixesCharacter(c);
+        glyph.setThaiFixesCharacter(i);
     }
 }

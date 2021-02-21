@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.Mixin;
 public abstract class MixinTtfGlyph implements IThaiFixesTrueTypeGlyph {
 
     private boolean thaiFixesFlag = false;
-    private char thaiFixesCharacter = '\0';
+    private int thaiFixesCharacter = '\0';
     private float thaiFixesOversample = 0.0f;
 
     @Override
@@ -21,12 +21,12 @@ public abstract class MixinTtfGlyph implements IThaiFixesTrueTypeGlyph {
     }
 
     @Override
-    public void setThaiFixesCharacter(char c) {
-        thaiFixesCharacter = c;
+    public void setThaiFixesCharacter(int i) {
+        thaiFixesCharacter = i;
     }
 
     @Override
-    public char getThaiFixesCharacter() {
+    public int getThaiFixesCharacter() {
         return thaiFixesCharacter;
     }
 

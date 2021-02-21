@@ -17,8 +17,8 @@ public abstract class MixinTrueTypeFont {
     private float oversample;
 
     @Inject(method = "getGlyph", at = @At("RETURN"), cancellable = true)
-    private void onGetGlyph(char c, CallbackInfoReturnable<RenderableGlyph> ci) {
-        if(ThaiFixesMod.trueTypeGlyphOffsetMap.get(c) == null) {
+    private void onGetGlyph(int i, CallbackInfoReturnable<RenderableGlyph> ci) {
+        if(ThaiFixesMod.trueTypeGlyphOffsetMap.get(i) == null) {
             return;
         }
 
@@ -27,7 +27,7 @@ public abstract class MixinTrueTypeFont {
             return;
         
         glyph.setThaiFixesFlag(true);
-        glyph.setThaiFixesCharacter(c);
+        glyph.setThaiFixesCharacter(i);
         glyph.setThaiFixesOversample(oversample);
     }
 }
