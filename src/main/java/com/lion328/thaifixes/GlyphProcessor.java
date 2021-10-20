@@ -34,6 +34,7 @@ public class GlyphProcessor {
         return new GlyphRenderer(
                 converted.getRenderLayer1(),
                 converted.getRenderLayer2(),
+                converted.getRenderLayer3(),
                 converted.thaiFixesUMin(),
                 converted.thaiFixesUMax(),
                 v0,
@@ -58,6 +59,7 @@ public class GlyphProcessor {
         return new GlyphRenderer(
                 converted.getRenderLayer1(),
                 converted.getRenderLayer2(),
+                converted.getRenderLayer3(),
                 converted.thaiFixesUMin(),
                 converted.thaiFixesUMax(),
                 converted.thaiFixesVMin(),
