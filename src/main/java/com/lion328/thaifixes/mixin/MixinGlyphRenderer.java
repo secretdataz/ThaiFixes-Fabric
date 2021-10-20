@@ -15,27 +15,30 @@ public interface MixinGlyphRenderer {
     @Accessor(value = "seeThroughTextLayer")
     RenderLayer getRenderLayer2();
 
-    @Accessor(value = "uMin")
+    @Accessor(value = "polygonOffsetTextLayer")
+    RenderLayer getRenderLayer3();
+
+    @Accessor(value = "minU")
     float thaiFixesUMin();
 
-    @Accessor(value = "uMax")
+    @Accessor(value = "maxU")
     float thaiFixesUMax();
 
-    @Accessor(value = "vMin")
+    @Accessor(value = "minV")
     float thaiFixesVMin();
 
-    @Accessor(value = "vMax")
+    @Accessor(value = "maxV")
     float thaiFixesVMax();
 
-    @Accessor(value = "xMin")
+    @Accessor(value = "minX")
     float thaiFixesXMin();
 
-    @Accessor(value = "xMax")
+    @Accessor(value = "maxX")
     float thaiFixesXMax();
 
-    @Accessor(value = "yMin")
+    @Accessor(value = "minY")
     float thaiFixesYMin();
 
-    @Accessor(value = "yMax")
+    @Accessor(value = "maxY")
     float thaiFixesYMax();
 }

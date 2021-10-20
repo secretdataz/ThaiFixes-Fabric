@@ -37,7 +37,7 @@ public class ThaiFixesMod implements ClientModInitializer {
 			}
 
 			@Override
-			public void apply(ResourceManager resourceManager) {
+			public void reload(ResourceManager resourceManager) {
                 getLogger().info("Reloading ThaiFixes offset configurations.");
                 Gson gson = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
                 resourceManager.findResources("offsets", s -> s.endsWith(".json")).forEach(e -> {
